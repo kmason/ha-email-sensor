@@ -16,67 +16,19 @@ from .const import (
     ATTR_TRACKING_NUMBERS, EMAIL_ATTR_FROM, EMAIL_ATTR_SUBJECT,
     EMAIL_ATTR_BODY)
 
-from .parsers.ups import ATTR_UPS, EMAIL_DOMAIN_UPS, parse_ups
-from .parsers.fedex import ATTR_FEDEX, EMAIL_DOMAIN_FEDEX, parse_fedex
-from .parsers.paypal import ATTR_PAYPAL, EMAIL_DOMAIN_PAYPAL, parse_paypal
-from .parsers.usps import ATTR_USPS, EMAIL_DOMAIN_USPS, parse_usps
-from .parsers.ali_express import ATTR_ALI_EXPRESS, EMAIL_DOMAIN_ALI_EXPRESS, parse_ali_express
-from .parsers.newegg import ATTR_NEWEGG, EMAIL_DOMAIN_NEWEGG, parse_newegg
-from .parsers.rockauto import ATTR_ROCKAUTO, EMAIL_DOMAIN_ROCKAUTO, parse_rockauto
-from .parsers.bh_photo import ATTR_BH_PHOTO, EMAIL_DOMAIN_BH_PHOTO, parse_bh_photo
-from .parsers.ebay import ATTR_EBAY, EMAIL_DOMAIN_EBAY, parse_ebay
-from .parsers.dhl import ATTR_DHL, EMAIL_DOMAIN_DHL, parse_dhl
-from .parsers.hue import ATTR_HUE, EMAIL_DOMAIN_HUE, parse_hue
-from .parsers.google_express import ATTR_GOOGLE_EXPRESS, EMAIL_DOMAIN_GOOGLE_EXPRESS, parse_google_express
-from .parsers.western_digital import ATTR_WESTERN_DIGITAL, EMAIL_DOMAIN_WESTERN_DIGITAL, parse_western_digital
-from .parsers.monoprice import ATTR_MONOPRICE, EMAIL_DOMAIN_MONOPRICE, parse_monoprice
-from .parsers.georgia_power import ATTR_GEORGIA_POWER, EMAIL_DOMAIN_GEORGIA_POWER, parse_georgia_power
-from .parsers.best_buy import ATTR_BEST_BUY, EMAIL_DOMAIN_BEST_BUY, parse_best_buy
-from .parsers.dollar_shave_club import ATTR_DOLLAR_SHAVE_CLUB, EMAIL_DOMAIN_DOLLAR_SHAVE_CLUB, parse_dollar_shave_club
-from .parsers.nuleaf import ATTR_NULEAF, EMAIL_DOMAIN_NULEAF, parse_nuleaf
-from .parsers.timeless import ATTR_TIMELESS, EMAIL_DOMAIN_TIMLESS, parse_timeless
-from .parsers.dsw import ATTR_DSW, EMAIL_DOMAIN_DSW, parse_dsw
-from .parsers.wyze import ATTR_WYZE, EMAIL_DOMAIN_WYZE, parse_wyze
-from .parsers.reolink import ATTR_REOLINK, EMAIL_DOMAIN_REOLINK, parse_reolink
-from .parsers.chewy import ATTR_CHEWY, EMAIL_DOMAIN_CHEWY, parse_chewy
-from .parsers.groupon import ATTR_GROUPON, EMAIL_DOMAIN_GROUPON, parse_groupon
-from .parsers.zazzle import ATTR_ZAZZLE, EMAIL_DOMAIN_ZAZZLE, parse_zazzle
-from .parsers.home_depot import ATTR_HOME_DEPOT, EMAIL_DOMAIN_HOME_DEPOT, parse_home_depot
-from .parsers.swiss_post import ATTR_SWISS_POST, EMAIL_DOMAIN_SWISS_POST, parse_swiss_post
-from .parsers.bespoke_post import ATTR_DSW, EMAIL_DOMAIN_DSW, parse_bespoke_post
-from .parsers.manta_sleep import ATTR_MANTA_SLEEP, EMAIL_DOMAIN_MANTA_SLEEP, parse_manta_sleep
+from .parsers.ups import ATTR_UPS, parse_ups
+from .parsers.fedex import ATTR_FEDEX, parse_fedex
+from .parsers.paypal import ATTR_PAYPAL, parse_paypal
+from .parsers.usps import ATTR_USPS, parse_usps
+from .parsers.canada_post import ATTR_CANADA_POST, parse_canada_post
 
 
 parsers = [
-    (ATTR_UPS, EMAIL_DOMAIN_UPS, parse_ups),
-    (ATTR_FEDEX, EMAIL_DOMAIN_FEDEX, parse_fedex),
-    (ATTR_PAYPAL, EMAIL_DOMAIN_PAYPAL, parse_paypal),
-    (ATTR_USPS, EMAIL_DOMAIN_USPS, parse_usps),
-    (ATTR_ALI_EXPRESS, EMAIL_DOMAIN_ALI_EXPRESS, parse_ali_express),
-    (ATTR_NEWEGG, EMAIL_DOMAIN_NEWEGG, parse_newegg),
-    (ATTR_ROCKAUTO, EMAIL_DOMAIN_ROCKAUTO, parse_rockauto),
-    (ATTR_BH_PHOTO, EMAIL_DOMAIN_BH_PHOTO, parse_bh_photo),
-    (ATTR_EBAY, EMAIL_DOMAIN_EBAY, parse_ebay),
-    (ATTR_DHL, EMAIL_DOMAIN_DHL, parse_dhl),
-    (ATTR_HUE, EMAIL_DOMAIN_HUE, parse_hue),
-    (ATTR_GOOGLE_EXPRESS, EMAIL_DOMAIN_GOOGLE_EXPRESS, parse_google_express),
-    (ATTR_WESTERN_DIGITAL, EMAIL_DOMAIN_WESTERN_DIGITAL, parse_western_digital),
-    (ATTR_MONOPRICE, EMAIL_DOMAIN_MONOPRICE, parse_monoprice),
-    (ATTR_GEORGIA_POWER, EMAIL_DOMAIN_GEORGIA_POWER, parse_georgia_power),
-    (ATTR_BEST_BUY, EMAIL_DOMAIN_BEST_BUY, parse_best_buy),
-    (ATTR_DOLLAR_SHAVE_CLUB, EMAIL_DOMAIN_DOLLAR_SHAVE_CLUB, parse_dollar_shave_club),
-    (ATTR_NULEAF, EMAIL_DOMAIN_NULEAF, parse_nuleaf),
-    (ATTR_TIMELESS, EMAIL_DOMAIN_TIMLESS, parse_timeless),
-    (ATTR_DSW, EMAIL_DOMAIN_DSW, parse_dsw),
-    (ATTR_WYZE, EMAIL_DOMAIN_WYZE, parse_wyze),
-    (ATTR_REOLINK, EMAIL_DOMAIN_REOLINK, parse_reolink),
-    (ATTR_CHEWY, EMAIL_DOMAIN_CHEWY, parse_chewy),
-    (ATTR_GROUPON, EMAIL_DOMAIN_GROUPON, parse_groupon),
-    (ATTR_ZAZZLE, EMAIL_DOMAIN_ZAZZLE, parse_zazzle),
-    (ATTR_HOME_DEPOT, EMAIL_DOMAIN_HOME_DEPOT, parse_home_depot),
-    (ATTR_SWISS_POST, EMAIL_DOMAIN_SWISS_POST, parse_swiss_post),
-    (ATTR_DSW, EMAIL_DOMAIN_DSW, parse_bespoke_post),
-    (ATTR_MANTA_SLEEP, EMAIL_DOMAIN_MANTA_SLEEP, parse_manta_sleep),
+    (ATTR_UPS, parse_ups),
+    (ATTR_FEDEX, parse_fedex),
+    (ATTR_PAYPAL, parse_paypal),
+    (ATTR_USPS, parse_usps),
+    (ATTR_CANADA_POST,parse_canada_post)
 ]
 
 _LOGGER = logging.getLogger(__name__)
@@ -157,26 +109,26 @@ class EmailEntity(Entity):
         self._attr[ATTR_TRACKING_NUMBERS] = {}
 
         # empty out all parser arrays
-        for ATTR, EMAIL_DOMAIN, parser in parsers:
+        for ATTR, parser in parsers:
             self._attr[ATTR_TRACKING_NUMBERS][ATTR] = []
 
         # for each email run each parser and save in the corresponding ATTR
         for email in emails:
-            email_from = email[EMAIL_ATTR_FROM]
-            if isinstance(email_from, (list, tuple)):
-                email_from = list(email_from)
-                email_from = ''.join(list(email_from[0]))
+            email_body = email[EMAIL_ATTR_BODY]
+    #        if isinstance(email_from, (list, tuple)):
+     #           email_from = list(email_from)
+    #            email_from = ''.join(list(email_from[0]))
 
-            for ATTR, EMAIL_DOMAIN, parser in parsers:
+            for ATTR, parser in parsers:
                 try:
-                    if EMAIL_DOMAIN in email_from:
+                    if ATTR in email_body:
                         self._attr[ATTR_TRACKING_NUMBERS][ATTR] = self._attr[ATTR_TRACKING_NUMBERS][ATTR] + parser(
                             email=email)
                 except Exception as err:
                     _LOGGER.error('{} error: {}'.format(ATTR, err))
 
         # remove duplicates
-        for ATTR, EMAIL_DOMAIN, parser in parsers:
+        for ATTR, parser in parsers:
             tracking_domain = self._attr[ATTR_TRACKING_NUMBERS][ATTR]
             if len(tracking_domain) > 0 and isinstance(tracking_domain[0], str):
                 self._attr[ATTR_TRACKING_NUMBERS][ATTR] = list(

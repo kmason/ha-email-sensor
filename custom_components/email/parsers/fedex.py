@@ -19,7 +19,10 @@ def parse_fedex(email):
     for link in links:
         if not link:
             continue
-        match = re.search('tracknumbers=(.*?)&clienttype', link)
+        match = re.search('trackingnumber=([a-zA-Z\d]*)', link)
+        if match and match.group(1) not in tracking_numbers:
+            tracking_numbers.append(match.group(1))
+        match = re.search('trknbr=([a-zA-Z\d]*)', link)
         if match and match.group(1) not in tracking_numbers:
             tracking_numbers.append(match.group(1))
 
